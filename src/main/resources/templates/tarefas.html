@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+    <head>
+        <title>TO-DO's</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/posts}">Postagens</a>
+        <a th:href="@{/albuns}">Albuns</a>
+        <br><br>
+        
+        <h1>Adicionar Tarefa:</h1>
+        <br><br>
+        <form th:action="@{/tarefas}" th:object="${tarefas}" method="post">
+            <input type="text"  name="title" placeholder="Nome Tarefa:"/>
+            <input type="Submit" value="Adicionar">
+        </form>
+        
+        <h1>Em progresso:</h1>
+        
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Status</th>
+                <th>true or false</th>
+            </tr>
+            <form>
+                <tr th:each="tarefas : ${allTarefas}">
+                    <td th:text="${tarefas.id}"></td>
+                    <td th:text="${tarefas.title}"> </td>
+                    <td><input type="checkbox" th:checked="${tarefas.completed}"> </td>               
+                    <td th:text="${tarefas.completed}">
+                </tr>
+            </form>
+        </table>
+        
+    </body>
+</html>

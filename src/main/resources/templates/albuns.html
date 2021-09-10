@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+    <head>
+        <title>Albuns</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="albuns.css">
+    </head>
+    <body>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/tarefas}">Tarefas</a>
+        <a th:href="@{/posts}">Postagens</a>
+        <br><br>
+        <form th:action="@{/albuns}" th:object="${albuns}" method="post">
+            <input type="text" name="tituloAlbum" placeholder="Titulo:">
+            <input type="submit" value="Publicar">
+        </form>
+        
+        <br><br>
+        
+        <table>
+            <tr>
+                <th>Titulo</th>
+                <th>thumbnail</th>
+            </tr>
+            <tr th:each="albuns : ${allAlbuns}">
+                <td th:text="${albuns.title}"></td>
+                <td><img th:src="${albuns.thumbnailUrl}"> </td>
+                   
+            </tr>
+       </table>
+    </body>
+</html>
