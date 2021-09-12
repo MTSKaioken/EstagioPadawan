@@ -32,3 +32,6 @@ h2, form{
 h2, li{
     color: white;
 }
+input[type="checkbox"]{
+    cursor: pointer;
+}

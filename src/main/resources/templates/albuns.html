@@ -9,6 +9,12 @@ and open the template in the editor.
         <title>Albuns</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="MTSKaioken">
+        <meta name="keywords" content="HTML, CSS, Java, Springboot, Thymeleaf, Lombok, Framework, Estágio, API">
+        <meta name="reply-to" content="kaio.martins2@aluno.unip.br">
+        <meta name="description" content="Pagina do projeto Framework Padawans, nela implementando conteúdos de uma API e temos a opção de adicionar um novo Album.">
+        
+        <link rel="icon" type="imagem/png" href="icons8-r2-d2.svg"/> 
         <link rel="stylesheet" type="text/css" href="globalsStyle.css">
         <link rel="stylesheet" type="text/css" href="AlbunsStyle.css">
     </head>
@@ -20,6 +26,7 @@ and open the template in the editor.
                         <li><a th:href="@{/}">Home</a></li>
                         <li><a th:href="@{/posts}">Postagens</a></li>
                         <li><a th:href="@{/tarefas}">Tarefas</a></li>
+                        <li><a th:href="@{/albuns}">Albuns</a></li>
                     </ul>    
                 </nav>      
             </div>
@@ -32,23 +39,19 @@ and open the template in the editor.
             <input class="txtInput" maxlength="80" type="text" name="Url" placeholder="URL imagem:"><br><br><br><br>
 
             <input class="btn" type="submit" value="Publicar">
-            <div class="alerta" th:if="${message}" th:text="${message}" />
+            <div class="alerta" th:if="${message}" th:text="${message}"></div>
         </form>
         
         <br><br>
-        
-       
-        
-   <div class="bg-container">    
+            
         <div class="grid-container"> 
             <div th:each="albuns : ${allAlbuns}">
                 <a target="_blank" th:href="${albuns.url}">
-                <img class="grid-item" th:src="${albuns.thumbnailUrl}"/>  
+                    <img class="grid-item" th:src="${albuns.thumbnailUrl}"/>  
                 </a>
                 <p class="grid-item-title" th:text="${albuns.title}"></p>                                 
             </div>
         </div>    
-   </div>
         
     </body>
 </html>

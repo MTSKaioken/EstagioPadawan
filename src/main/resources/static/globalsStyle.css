@@ -95,6 +95,7 @@ body .bg a:hover{
 }
 
 .alerta{
+    font-weight:bold;
     color: #fd2626;
 }
 
@@ -102,5 +103,6 @@ body .bg a:hover{
 .txtInput{
     padding: 10px;
     border: 1px solid #FFFF00;
+    margin-bottom: 10px;
     border-radius: 5px;
 }

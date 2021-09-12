@@ -3,8 +3,13 @@
     <head>
         <title>Postagens</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="MTSKaioken">
+        <meta name="keywords" content="HTML, CSS, Java, Springboot, Thymeleaf, Lombok, Framework, Estágio, API">
+        <meta name="reply-to" content="kaio.martins2@aluno.unip.br">
+        <meta name="description" content="Pagina do projeto Framework Padawans, nela implementando conteúdos de uma API e temos a opção de adicionar uma nova publicação.">
+        
+        <link rel="icon" type="imagem/png" href="icons8-r2-d2.svg"/> 
         <link rel="stylesheet" type="text/css" href="globalsStyle.css">
         <link rel="stylesheet" type="text/css" href="PostsStyle.css">
     </head>
@@ -13,6 +18,7 @@
             <nav class="barra-navegacao">
                 <ul>
                     <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/posts}">Postagens</a></li>
                     <li><a th:href="@{/tarefas}">Tarefas</a></li>
                     <li><a th:href="@{/albuns}">Albuns</a></li>
                 </ul>    
