@@ -9,30 +9,46 @@ and open the template in the editor.
         <title>Albuns</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="albuns.css">
+        <link rel="stylesheet" type="text/css" href="globalsStyle.css">
+        <link rel="stylesheet" type="text/css" href="AlbunsStyle.css">
     </head>
     <body>
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/tarefas}">Tarefas</a>
-        <a th:href="@{/posts}">Postagens</a>
+    
+       <div class="bg">
+                <nav class="barra-navegacao">
+                    <ul>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li><a th:href="@{/posts}">Postagens</a></li>
+                        <li><a th:href="@{/tarefas}">Tarefas</a></li>
+                    </ul>    
+                </nav>      
+            </div>
+        
         <br><br>
+        <h2>Adicionar Album:</h2>
         <form th:action="@{/albuns}" th:object="${albuns}" method="post">
-            <input type="text" name="tituloAlbum" placeholder="Titulo:">
-            <input type="submit" value="Publicar">
+            <input class="txtInput" maxlength="80" type="text" name="title" placeholder="Titulo:"><br><br>
+            <input class="txtInput" maxlength="80" type="text" name="thumbnailUrl" placeholder="URL miniatura:"><br><br>
+            <input class="txtInput" maxlength="80" type="text" name="Url" placeholder="URL imagem:"><br><br><br><br>
+
+            <input class="btn" type="submit" value="Publicar">
+            <div class="alerta" th:if="${message}" th:text="${message}" />
         </form>
         
         <br><br>
         
-        <table>
-            <tr>
-                <th>Titulo</th>
-                <th>thumbnail</th>
-            </tr>
-            <tr th:each="albuns : ${allAlbuns}">
-                <td th:text="${albuns.title}"></td>
-                <td><img th:src="${albuns.thumbnailUrl}"> </td>
-                   
-            </tr>
-       </table>
+       
+        
+   <div class="bg-container">    
+        <div class="grid-container"> 
+            <div th:each="albuns : ${allAlbuns}">
+                <a target="_blank" th:href="${albuns.url}">
+                <img class="grid-item" th:src="${albuns.thumbnailUrl}"/>  
+                </a>
+                <p class="grid-item-title" th:text="${albuns.title}"></p>                                 
+            </div>
+        </div>    
+   </div>
+        
     </body>
 </html>

@@ -1,0 +1,106 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h2, form{
+  text-align: center;
+}
+
+/* botões */
+.btn{
+  font-size:15px;
+  font-family:Arial;
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color: white;
+  border-color:#ffaa22;
+  font-weight:bold;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  text-shadow: 0px 1px 0px #ffee66;
+  background:linear-gradient(#ffec64, #ffab23);
+}
+
+.btn:hover {
+  background: linear-gradient(#ffab23, #ffec64);
+}
+
+
+/*scrollbar no chrome */
+/* width */
+::-webkit-scrollbar {
+  background: #121212;
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFFF00; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFCC00; 
+}
+
+/* background-pages */
+body{
+    background-image: url("https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_1280.png");
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+.barra-navegacao{
+    position: relative;
+    text-align: center;
+    top: 10px;
+}
+/* navbar */
+body .bg nav ul{
+    margin: 0;
+    padding: 0;
+}
+body .bg nav ul li{
+    display: inline;
+}
+
+
+/* link navbar*/
+body .bg a{
+    padding: 15px;
+    color: #FFFF00;
+    font-family: "Star Jedi Outline", sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+body .bg a:hover{
+    color: #FFCC00;
+    font-family: "Star Jedi Outline", sans-serif;
+    font-size: 32px;
+    text-decoration: none;
+}
+
+.alerta{
+    color: #fd2626;
+}
+
+
+.txtInput{
+    padding: 10px;
+    border: 1px solid #FFFF00;
+    border-radius: 5px;
+}

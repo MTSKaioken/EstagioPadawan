@@ -9,13 +9,18 @@ and open the template in the editor.
         <title>Home</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="globalsStyle.css">
+        
     </head>
-    <body background="editarpretoebranco.png">
-        <a th:href="@{/posts}">Postagens</a>
-        <a th:href="@{/tarefas}">Tarefas</a>
-        <a th:href="@{/albuns}">Albuns</a>
-        <br><br>
-        
-        
+    <body>
+        <div class="bg">
+            <nav class="barra-navegacao">
+                <ul>
+                    <li><a th:href="@{/posts}">Postagens</a></li>
+                    <li><a th:href="@{/tarefas}">Tarefas</a></li>
+                    <li><a th:href="@{/albuns}">Albuns</a></li>
+                </ul>    
+            </nav>      
+        </div>
     </body>
 </html>

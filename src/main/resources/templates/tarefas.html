@@ -9,34 +9,44 @@ and open the template in the editor.
         <title>TO-DO's</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="globalsStyle.css">
+        <link rel="stylesheet" type="text/css" href="TarefasStyle.css">
     </head>
     <body>
-        <a th:href="@{/}">Home</a>
-        <a th:href="@{/posts}">Postagens</a>
-        <a th:href="@{/albuns}">Albuns</a>
-        <br><br>
         
-        <h1>Adicionar Tarefa:</h1>
+        <div class="bg">
+            <nav class="barra-navegacao">
+                <ul>
+                    <li><a th:href="@{/}">Home</a></li>
+                    <li><a th:href="@{/posts}">Postagens</a></li>
+                    <li><a th:href="@{/albuns}">Albuns</a></li>
+                </ul>    
+            </nav>      
+        </div>
+        
+        <h2>Adicionar Tarefa:</h2>
         <br><br>
         <form th:action="@{/tarefas}" th:object="${tarefas}" method="post">
-            <input type="text"  name="title" placeholder="Nome Tarefa:"/>
-            <input type="Submit" value="Adicionar">
+            <input class="txtInput" type="text"  name="title" placeholder="Nome Tarefa:"/>
+            <br><br>
+            <input class="btn" type="Submit" value="Adicionar">
+            <div class="alerta" th:if="${message}" th:text="${message}" />
         </form>
         
-        <h1>Em progresso:</h1>
+        <br><br>
         
         <table>
             <tr>
                 <th>ID</th>
                 <th>Titulo</th>
                 <th>Status</th>
-                <th>true or false</th>
+                <th>T or F</th>
             </tr>
             <form>
                 <tr th:each="tarefas : ${allTarefas}">
                     <td th:text="${tarefas.id}"></td>
                     <td th:text="${tarefas.title}"> </td>
-                    <td><input type="checkbox" th:checked="${tarefas.completed}"> </td>               
+                    <td><input type="checkbox" style="cursor:pointer" th:checked="${tarefas.completed}"> </td>               
                     <td th:text="${tarefas.completed}">
                 </tr>
             </form>

@@ -34,4 +34,8 @@ public class TarefasRepository {
    public void add(final Tarefas tarefas) {
        this.tarefas.add(tarefas);
     } 
+
+    public int incrementID() {
+        return tarefas.size();
+    }
 }

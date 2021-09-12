@@ -38,8 +38,13 @@ public class TarefasController {
      return modelAndView;
     }
     
-    @RequestMapping(value="/tarefas", method=RequestMethod.POST)
-    public String createTarefa(@Valid @ModelAttribute Tarefas tarefas, RedirectAttributes redirectAttributes){
+    @PostMapping("/tarefas")
+    public String createTarefa(@Valid @ModelAttribute Tarefas tarefas, BindingResult result, RedirectAttributes redirectAttributes){
+        if(result.hasErrors()){
+        redirectAttributes.addFlashAttribute("message", "Campo(s) vazio(s)!");
+        return "redirect:tarefas";
+        }
+         tarefas.setId(repository.incrementID()+1);
         repository.add(tarefas);        
         return "redirect:tarefas";
         }

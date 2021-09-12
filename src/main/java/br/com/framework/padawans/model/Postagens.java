@@ -14,14 +14,15 @@ import lombok.Setter;
  *
  * @author mtskaioken
  */
+
 @Setter
 @Getter
 @NoArgsConstructor
 public class Postagens {
     private Integer id;
-    //@NotBlank(message="Campo Obrigatório!")
+    @NotBlank
     private String title;
-    //@NotBlank(message="Campo Obrigatório!")
+    @NotBlank
     private String body;
     
     public Postagens(final String title){

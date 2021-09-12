@@ -1,0 +1,36 @@
+
+.grid-container {
+  width: 100%;
+  background-color: whitesmoke;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+.grid-item {
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  font-size: 30px;
+}
+.grid-item-title {
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+h2, label{
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .grid-container {
+    grid-template-columns: auto auto;
+    }
+    
+}
+@media only screen and (max-width: 375px) {
+    .grid-container {
+    grid-template-columns: auto;
+    }
+}
+

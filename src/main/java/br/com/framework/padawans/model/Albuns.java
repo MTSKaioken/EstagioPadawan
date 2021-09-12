@@ -21,8 +21,11 @@ public class Albuns {
 
    private Integer albumId;
    private Integer id;
+   @NotBlank
    private String title;
+   @NotBlank
    private String url;
+   @NotBlank   
    private String thumbnailUrl;
 
     public Albuns(Integer albumId, Integer id, String title, String url, String thumbnailUrl) {

@@ -1,0 +1,22 @@
+
+<form th:object="${postagens}" method="post">
+            <input type="text" name="title" placeholder="Titulo:">
+            <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">teste</span>
+            <br><br>
+            <textarea name="body" rows="10" cols="30" placeholder="Corpo da postagem"></textarea>
+            <br><br>
+            <input type="submit" value="Publicar">
+        </form>
+
+assim tava indo
+
+
+
+ <div class="galeria"> 
+            <tr th:each="albuns : ${allAlbuns}">
+                <td th:text="${albuns.title}"></td>
+                <td><img th:src="${albuns.thumbnailUrl}"> </td>                   
+            </tr>
+            </div>
+
+funcionando bonitin esse

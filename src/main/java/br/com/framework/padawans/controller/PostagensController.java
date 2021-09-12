@@ -35,21 +35,24 @@ public class PostagensController {
     
     @GetMapping("/posts")
     public ModelAndView posts() {
+        
         final ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("postagens");
+        modelAndView.setViewName("posts"); // nome do arquivo da view
         
         modelAndView.addObject("postagens", new Postagens());
-        modelAndView.addObject("allPostagens", repository.getAllPostagens());
+        modelAndView.addObject("allPostagens", repository.getAllPostagens()); //allPostagens é uma lista com todas as pubs
         return modelAndView;
     }
     
-    @RequestMapping(value="/posts", method=RequestMethod.POST)
-    public String createPostagem(@Valid @ModelAttribute Postagens postagens, BindingResult result, RedirectAttributes redirectAttributes){  
+    @PostMapping("/posts")
+    public String createPostagem(@Valid @ModelAttribute Postagens postagens, BindingResult result, RedirectAttributes redirectAttributes){          
         if(result.hasErrors()){
-         return "redirect:posts";
-        }
-        repository.add(postagens);
-        return "redirect:posts";
+            redirectAttributes.addFlashAttribute("message", "Campo(s) vazio(s)!");
+            return "redirect:posts"; // nome da view para retornar
+        } 
+        postagens.setId(repository.incrementID()+1);
+        repository.add(postagens);     
+        return "redirect:posts"; //redireciona para a mesma tela
         
         }
 }

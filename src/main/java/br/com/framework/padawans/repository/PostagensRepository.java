@@ -35,4 +35,7 @@ public class PostagensRepository {
     public void add(final Postagens postagens) {
        this.postagens.add(postagens);
     }
+    public int incrementID() {
+        return postagens.size();
+    }
 }
