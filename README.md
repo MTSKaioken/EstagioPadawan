@@ -9,6 +9,23 @@ Desenvoler uma aplicação seguindo as instruções abaixo:
 
 2 - Post estáticos consumindo a seguinte API: https://jsonplaceholder.typicode.com/
 
+## Requisitos
+
+- Preferencialmente o Chrome como navegador, mas outros também são suportados.
+
+- Feito em Java 11, então preferencialmente esta versão
+
+- Apache Netbeans, Eclipse ou Spring tools como IDE.
+
+## Etapas
+
+1. Clonar o repositório na workspace da IDE desejada
+
+2. Feito isso o gradle baixará as dependências necessárias.
+
+3. Prontinho, só dar run no projeto :)
+
+
 ## Checklist    :heavy_check_mark:
 
   - [x] Deve Listar albuns, Postagens e TO-DOS.
